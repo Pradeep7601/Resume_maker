@@ -13,30 +13,30 @@
   <table class="table mt-3">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Name</th>
+        <th>Professional Summary</th>
         <th>Tools</th>
         <th>Coding</th>
         <th>Designation</th>
         <th>Action</th>
-        <th>Download</th>
+        <th>Resume</th>
       </tr>
     </thead>
     <tbody>
       {% for employee in employees %}
       <tr>
-        <td>{{ employee.id }}</td>
         <td>{{ employee.name }}</td>
+        <td>{{ employee.professional_summary }}</td>
         <td>{{ employee.tools.all|join:', ' }}</td>
         <td>{{ employee.coding_skills.all|join:', ' }}</td>
         <td>{{ employee.designation }}</td>
         <td>
-          <a href="{% url 'edit' employee.id %}" class="btn btn-sm btn-primary">Edit</a>
+          <a href="{% url 'edit' employee.id %}" class="btn btn-sm btn-primary mb-2">Edit</a>
           <form method="POST" action="{% url 'delete' employee.id %}" class="d-inline">
             {% csrf_token %}
-            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            <button type="submit" class="btn btn-sm btn-danger mb-2">Delete</button>
           </form>
-          <a href="{% url 'map_project' employee.id  %}" class="btn btn-sm btn-success">Map</a>
+          <a href="{% url 'map_project' employee.id  %}" class="btn btn-sm btn-success ">Map</a>
         </td>
         <td>
           <a href="{% url 'view_resume' employee.id  %}" class="btn btn-sm btn-primary">View</a>
