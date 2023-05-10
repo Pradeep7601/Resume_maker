@@ -23,7 +23,7 @@ class EmployeeForm(forms.ModelForm):
 
     class Meta:
         model = Employee
-        fields = ['name', 'professional_summary', 'tools', 'coding_skills', 'designation', 'is_current_employee']
+        fields = ['name', 'email', 'phone', 'linkedin' ,'professional_summary', 'tools', 'coding_skills', 'designation', 'is_current_employee']
 
 ############################################################################################
 

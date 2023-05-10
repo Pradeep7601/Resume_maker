@@ -14,10 +14,12 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Professional Summary</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Linkedin</th>
         <th>Tools</th>
         <th>Coding</th>
-        <th>Designation</th>
         <th>Action</th>
         <th>Resume</th>
       </tr>
@@ -26,10 +28,12 @@
       {% for employee in employees %}
       <tr>
         <td>{{ employee.name }}</td>
-        <td>{{ employee.professional_summary }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.linkedin }}</td>
         <td>{{ employee.tools.all|join:', ' }}</td>
         <td>{{ employee.coding_skills.all|join:', ' }}</td>
-        <td>{{ employee.designation }}</td>
         <td>
           <a href="{% url 'edit' employee.id %}" class="btn btn-sm btn-primary mb-2">Edit</a>
           <form method="POST" action="{% url 'delete' employee.id %}" class="d-inline">

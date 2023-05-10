@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Tool(models.Model):
     name = models.CharField(max_length=100)
     flag = models.BooleanField(default=True)
@@ -42,6 +41,9 @@ class Designation(models.Model):
 
 class Employee(models.Model):
     name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=255, blank=True)
+    phone = models.CharField(max_length=20)
+    linkedin = models.URLField(max_length=200)
     professional_summary = models.TextField()
     tools = models.ManyToManyField(Tool)
     coding_skills = models.ManyToManyField(CodingSkill)
