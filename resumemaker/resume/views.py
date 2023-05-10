@@ -171,6 +171,9 @@ def view_resume(request,id):
     employee = get_object_or_404(Employee, id=id)
     ename = employee.name
     edesignation=employee.designation
+    eeamil = employee.email
+    ephone = employee.phone
+    elinkedin = employee.linkedin
     epsummery = employee.professional_summary.split('#')
     etools=employee.tools.all()
     eskill=employee.coding_skills.all()
@@ -185,6 +188,9 @@ def view_resume(request,id):
     context = {
         'ename': ename,
         'edesignation': edesignation,
+        'eemail' : eeamil,
+        'ephone' : ephone,
+        'elinkedin' : elinkedin,
         'epsummery': epsummery,
         'etools': etools,
         'eskill': eskill,
